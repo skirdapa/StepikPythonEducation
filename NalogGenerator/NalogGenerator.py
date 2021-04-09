@@ -5,9 +5,16 @@ now = datetime.datetime.today().strftime("%H:%M:%S")
 
 """DEV"""
 stage = 'p2'
-sender_name = 'ООО "ТЭЭН"'
-sender_account = '40802810670010290997'
-sender_inn = '5905010251'
+sender_name = 'ИП Балацко Иван Петрович'
+sender_account = '40802810670010300214'
+sender_inn = '444414179229'
+
+
+# """DEV"""
+# stage = 'p2'
+# sender_name = 'ООО "ТЭЭН"'
+# sender_account = '40802810670010290997'
+# sender_inn = '5905010251'
 
 # """DEV"""
 # stage = 'p2'
