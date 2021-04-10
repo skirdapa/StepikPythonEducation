@@ -11,11 +11,40 @@
 i = 0
 lst = []
 myStr = ''
-while True:
+while True:  # Заполняем наш массив
     myStr = input()
     if myStr == 'end':
         break
     lst.append(myStr.split())
     i += 1
 
-print(lst)
+# print(lst)
+
+n = len(lst)
+m = len(lst[0])
+for i in range(n):  # Превращаем строки в инты, чтоб потом не раздувать строку подсчёта
+    for j in range(m):
+        lst[i][j] = int(lst[i][j])
+
+# print(lst)
+# Преобразуем наш массив и выводим
+for i in range(n):
+    for j in range(m):
+        i_up = i - 1
+        i_down = i + 1
+        j_left = j - 1
+        j_right = j + 1
+        if i_up < 0:
+            i_up = n - 1
+        if i_down > n - 1:
+            i_down = 0
+        if j_left < 0:
+            j_left = m - 1
+        if j_right > m - 1:
+            j_right = 0
+        print(lst[i_up][j] + lst[i_down][j] + lst[i][j_left] + lst[i][j_right], end=' ')
+    print()
+
+
+
+
