@@ -13,7 +13,7 @@
 используя этот файл в качестве входных данных. Выходной файл, который при этом у вас получится,
 надо отправить в качестве ответа на эту задачу.
 """
-with open('dataset_3363_2.txt', 'r') as dataset:
+with open('archive_string.txt', 'r') as dataset:
     archive_string = dataset.readline().strip()
 
 print(archive_string)
@@ -38,6 +38,6 @@ while i < len(archive_string):
 
 print(unpacking_string)
 
-with open('rez_file.txt', 'w') as rez_file:
+with open('unpacked_string.txt', 'w') as rez_file:
     rez_file.write(unpacking_string)
 
