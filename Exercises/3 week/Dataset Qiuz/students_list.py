@@ -25,9 +25,9 @@ with open('students_mark.txt', 'r') as marks:
     for line in marks:
         students.append(line.strip().split(';'))
 
-with open('students_avg_mark.txt', 'w') as mark_file:
-    print(students)
+print(students)
 
+with open('students_avg_mark.txt', 'w') as mark_file:
     avg_mark = [0, 0, 0]
     for student in students:
         avg_mark[0] += int(student[1])
