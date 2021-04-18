@@ -8,7 +8,7 @@
 
 На вход программе подаются интервалы, внутри которых всегда есть хотя бы одно число, которое делится на 3
 """
-#a, b = (int(i) for i in input().split())
+#a, b = (int(cls) for cls in input().split())
 a, b = int(input()), int(input())
 num = 0
 _sum = 0

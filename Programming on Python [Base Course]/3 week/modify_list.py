@@ -8,7 +8,7 @@
 def modify_list(lst):
     for i in range(len(lst)-1, -1, -1):  # перебираем список с конца, что бы сдвиг индексов при удалении не мешал
         if lst[i] % 2 == 1:
-            lst.pop(i)  # pop удаляет элемент с индексом i
+            lst.pop(i)  # pop удаляет элемент с индексом cls
         else:
             lst[i] //= 2
     return lst
