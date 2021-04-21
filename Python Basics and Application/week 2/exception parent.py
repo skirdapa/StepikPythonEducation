@@ -64,18 +64,68 @@ except FileNotFoundError:
 По условию этого теста, Костя посмотрел на этот код, и сказал Антону, что исключение FileNotFoundError можно не ловить,
 ведь мы уже ловим OSError -- предок FileNotFoundError
 """
-exception_dict = {}
+
+
+# Хочу попробовать решить это с помощью классов
+
+
+class CatchException:
+    # Пусть будет класс пойманных исключений
+    # Инициализируем с пустым множеством уже отлавливаемых исключений
+    # и пустым словарем иерархии исключений
+    def __init__(self):
+        self.caught_exception = set()
+        self.known_exception_hierarchy = {}
+
+    # Процедура добавления еще неизвестных исключений, мы каждый раз узнаем родителя и всех его детей
+    def add_exception(self, exc):
+        # Добавляем родительское исключение
+        self.caught_exception.add(exc)
+        # и если у него есть дети, то и всех детей,
+        for keys, values in self.known_exception_hierarchy.items():
+            if exc in values:
+                self.add_exception(keys)
+
+    # Обучаем экземпляр класса новой иерархии классов
+    def explore_the_hierarchy(self, list_exception):
+        # на всякий случай очищаем
+        self.known_exception_hierarchy.clear()
+        # и построчно создаем словарь исключений
+        for exc in list_exception:
+            # если есть дети то записываем
+            if len(exc) > 1:
+                self.known_exception_hierarchy[exc[0]] = exc[2:]
+            # если нет, то заполняем только родителя
+            else:
+                self.known_exception_hierarchy[exc[0]] = []
+
+    # проверка знаем ли мы уже это исключение
+    def check_exception(self, list_exc):
+        # если его нет в множестве знакомых исключений то выводим в консоль и сохраняем
+        for exc in list_exc:
+            if exc in self.caught_exception:
+                print(exc)
+            self.add_exception(exc)
+
+
+# Заполняем входные данные
+# получаем иерархию исключений
 n = int(input())
-line = []
+input_hierarchy = []
 for _ in range(n):
-    line = input().split()
-    print(line)
-    if len(line) > 1:
-        exception_dict[line[0]] = line[2:]
-    else:
-        exception_dict[line[0]] = []
+    input_hierarchy.append(input().split())
 
-# print(exception_dict)
+# print(input_hierarchy)
 
+# получаем исключения
+m = int(input())
+input_exception = []
+for _ in range(m):
+    input_exception.append(input())
 
-
+# Создаем объект класса
+myCatcher = CatchException()
+# Изучаем заданную иерархию
+myCatcher.explore_the_hierarchy(input_hierarchy)
+# Проверяем исключения
+myCatcher.check_exception(input_exception)
