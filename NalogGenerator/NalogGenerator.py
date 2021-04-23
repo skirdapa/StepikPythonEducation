@@ -4,10 +4,10 @@ today = datetime.date.today().strftime("%d.%m.%Y")
 now = datetime.datetime.today().strftime("%H:%M:%S")
 
 """DEV"""
-stage = 'p2'
-sender_name = 'ООО "УСПЕХ"'
-sender_account = '40702810570010268459'
-sender_inn = '5905010251'
+# stage = 'p2'
+# sender_name = 'ООО "УСПЕХ"'
+# sender_account = '40702810570010268459'
+# sender_inn = '5905010251'
 
 # """DEV"""
 # stage = 'p2'
@@ -45,6 +45,12 @@ sender_inn = '5905010251'
 # sender_name = 'ООО "Интеллектуальные технологии"'
 # sender_account = '40702810970010115393'
 # sender_inn = '7813490548'
+
+"""ASS"""
+stage = 'ass'
+sender_name = 'ИП Кудрявцев Михаил Павлович'
+sender_account = '40802810070010304865'
+sender_inn = '199441713837'
 
 """MID"""
 # stage = 'mid'
