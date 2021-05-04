@@ -3,7 +3,14 @@ import datetime
 today = datetime.date.today().strftime("%d.%m.%Y")
 now = datetime.datetime.today().strftime("%H:%M:%S")
 
+
 """DEV"""
+stage = 'p2'
+sender_name = 'ООО "ЗАКОН И ПОРЯДОК"'
+sender_account = '40702810570010269050'
+sender_inn = '5904354796'
+
+# """DEV"""
 # stage = 'p2'
 # sender_name = 'ООО "УСПЕХ"'
 # sender_account = '40702810570010268459'
@@ -47,10 +54,10 @@ now = datetime.datetime.today().strftime("%H:%M:%S")
 # sender_inn = '7813490548'
 
 """ASS"""
-stage = 'ass'
-sender_name = 'ИП Кудрявцев Михаил Павлович'
-sender_account = '40802810070010304865'
-sender_inn = '199441713837'
+# stage = 'ass'
+# sender_name = 'ИП Кудрявцев Михаил Павлович'
+# sender_account = '40802810070010304865'
+# sender_inn = '199441713837'
 
 """MID"""
 # stage = 'mid'
